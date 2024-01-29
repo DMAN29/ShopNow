@@ -1,7 +1,6 @@
 import React from 'react'
 import MainCarosel from '../Carousel/MainCarosel'
 import { PhoneData } from '../../Data/PhoneData';
-// import ProductChoice from '../Carousel/ProductChoice';
 import PageCarosel from '../Carousel/PageCarosel';
 import { ProductType } from '../../Data/ProductType';
 
