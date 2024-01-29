@@ -1,7 +1,9 @@
 import React from 'react' 
 const Footer = () => {
-  return <div className='bg-black text-white text-center'>
-    <div className=' grid grid-cols-2 xl:grid-cols-4 uppercase '>
+
+  return  <div className="mt-auto mb-16 lg:mb-0 ">
+  <div className="bg-black text-white text-center">
+    <div className=' grid grid-cols-2 md:grid-cols-4 uppercase '>
       <div>
       <h2 className='text-sm md:text-base lg:text-lg xl:text-xl font-semibold my-2 xl:my-5 text-gray-400'>About</h2>
       <div className='flex flex-col space-y-1 xl:space-y-2 text-xs md:text-sm xl:text-base'>      
@@ -39,6 +41,8 @@ const Footer = () => {
     </div>
     <h2 className='text-lg md:text-xl xl:text-2xl py-5'>&copy; 2023 ShopNow. All rights reserved.</h2>
   </div>
+  </div>
+
 }
 
 export default Footer
