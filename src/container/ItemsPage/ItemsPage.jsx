@@ -3,7 +3,6 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
-import CaroselCard from '../Carousel/CaroselCard'
 import ItemCard from './ItemCard'
 
 const sortOptions = [
@@ -30,7 +29,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ItemsPage() {
+export default function ItemsPage({product}) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
@@ -247,7 +246,7 @@ export default function ItemsPage() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{[1,1,1,1,1,1,1,1,1,1].map((data,index)=><ItemCard key={index}/>)}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{product.map((data,index)=><ItemCard key={index} item={data}/>)}
               </div>
             </div>
           </section>

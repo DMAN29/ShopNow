@@ -3,7 +3,8 @@ import Navbar from './container/Header/Navbar';
 import HomePage from './container/HomePage/HomePage';
 import Footer from './container/Footer/Footer';
 import ItemsPage from './container/ItemsPage/ItemsPage';
-// import './App.css'; // Import the CSS file for global styles
+import { PhoneData } from './Data/PhoneData';
+import ItemInfoPage from './container/ItemInfoPage/ItemInfoPage';
 
 const App = () => {
   return (
@@ -11,10 +12,12 @@ const App = () => {
       <Navbar />
       <div className="flex-1 py-[72px] md:pt-[128px] lg:pb-0">
         {/* <HomePage /> */}
-        <ItemsPage />
+        {/* <ItemsPage product={PhoneData} /> */}
+    <ItemInfoPage/>
       </div>
       <Footer />
     </div>
+
   );
 };
 
