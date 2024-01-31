@@ -3,6 +3,8 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import ReviewCard from "./ReviewCard";
 import { Grid, LinearProgress, Rating } from "@mui/material";
+import { PhoneData } from "../../Data/PhoneData";
+import ItemCard from "../ItemsPage/ItemCard";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -68,55 +70,58 @@ export default function Example() {
 
   return (
     <div className="bg-white">
-          <nav aria-label="Breadcrumb">
-            <ol
-              role="list"
-              className="mx-auto flex items-center space-x-2 px-4 sm:px-6 lg:px-8 py-3 w-10/12 mt-3 md:mt-6"
-            >
-              {product.breadcrumbs.map((breadcrumb) => (
-                <li key={breadcrumb.id}>
-                  <div className="flex items-center">
-                    <a
-                      href={breadcrumb.href}
-                      className="mr-2 text-sm font-medium text-gray-900"
-                    >
-                      {breadcrumb.name}
-                    </a>
-                    <svg
-                      width={16}
-                      height={20}
-                      viewBox="0 0 16 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="h-5 w-4 text-gray-300"
-                    >
-                      <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                    </svg>
-                  </div>
-                </li>
-              ))}
-              <li className="text-sm">
+      <nav aria-label="Breadcrumb">
+        <ol
+          role="list"
+          className="mx-auto flex items-center space-x-2 px-4 sm:px-6 lg:px-8 py-3 w-10/12 mt-3 md:mt-6"
+        >
+          {product.breadcrumbs.map((breadcrumb) => (
+            <li key={breadcrumb.id}>
+              <div className="flex items-center">
                 <a
-                  href={product.href}
-                  aria-current="page"
-                  className="font-medium text-gray-500 hover:text-gray-600"
+                  href={breadcrumb.href}
+                  className="mr-2 text-sm font-medium text-gray-900"
                 >
-                  {product.name}
+                  {breadcrumb.name}
                 </a>
-              </li>
-            </ol>
-          </nav>
+                <svg
+                  width={16}
+                  height={20}
+                  viewBox="0 0 16 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-4 text-gray-300"
+                >
+                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                </svg>
+              </div>
+            </li>
+          ))}
+          <li className="text-sm">
+            <a
+              href={product.href}
+              aria-current="page"
+              className="font-medium text-gray-500 hover:text-gray-600"
+            >
+              {product.name}
+            </a>
+          </li>
+        </ol>
+      </nav>
       <div className="pt-6 md:flex w-10/12 mx-auto">
         {/* Image gallery */}
         <div className="mx-auto sm:px-6 lg:px-8 md:1/2 xl:w-2/5 ">
           <div className="xl:flex">
             <div className="hidden xl:block xl:w-1/4">
-            {[1,1,1,1].map((item,index)=><img key={index}
-                src={product.images[0].src}
-                alt={product.images[0].alt}
-                className="h-1/4 w-full object-cover object-center p-2 rounded-xl"
-              />)}
-               </div>
+              {[1, 1, 1, 1].map((item, index) => (
+                <img
+                  key={index}
+                  src={product.images[0].src}
+                  alt={product.images[0].alt}
+                  className="h-1/4 w-full object-cover object-center p-2 rounded-xl"
+                />
+              ))}
+            </div>
             <div className="xl:w-3/4">
               <img
                 src={product.images[0].src}
@@ -125,12 +130,15 @@ export default function Example() {
               />
             </div>
             <div className="xl:hidden grid grid-cols-4">
-            {[1,1,1,1].map((item,index)=><img key={index}
-                src={product.images[0].src}
-                alt={product.images[0].alt}
-                className="object-cover object-center p-2 rounded-xl"
-              />)}
-               </div>
+              {[1, 1, 1, 1].map((item, index) => (
+                <img
+                  key={index}
+                  src={product.images[0].src}
+                  alt={product.images[0].alt}
+                  className="object-cover object-center p-2 rounded-xl"
+                />
+              ))}
+            </div>
           </div>
         </div>
         {/* Product info */}
@@ -305,10 +313,14 @@ export default function Example() {
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:pb-16 lg:pr-8 lg:pt-6">
             {/* Description and details */}
             <div>
-              <h3 className="font-bold  text-2xl md:text-xl xl:text-2xl">Description</h3>
+              <h3 className="font-bold  text-2xl md:text-xl xl:text-2xl">
+                Description
+              </h3>
 
               <div className="space-y-6">
-                <p className="text-sm xl:text-base text-gray-900">{product.description}</p>
+                <p className="text-sm xl:text-base text-gray-900">
+                  {product.description}
+                </p>
               </div>
             </div>
 
@@ -336,79 +348,101 @@ export default function Example() {
           </div>
         </div>
       </div>
+
       {/* Ratings and Reviews */}
-      {/* <div className="w-11/12 border mx-auto my-5 p-5">
-      <h2 className="font-bold text-2xl">Rating and Reviews</h2>
-      <div className="flex">
-      <div className="w-3/5">
-      {[1,1,1,1,1].map((item,index)=><ReviewCard key={index}/>)}
-      </div>
-      <div className="w-2/5">
-        <h3 className="text-xl font-semibold">Product Ratings</h3>
-        <div className="flex items-center">
-          <Rating value={4.6} precision={.5}  readOnly/>
-          <p className="opacity-60">57841 Raitings</p>
-        </div>
-        <Grid container   alignItem="center" gap={2} >
-          <Grid item xs={2}>
-            <p>Excellent</p>
-          </Grid>
+      <h2 className="font-bold text-2xl mt-5 mx-auto w-10/12">
+        Rating and Reviews
+      </h2>
+      <div className="w-10/12 mx-auto my-5 border shadow-xl">
+        <Grid container>
           <Grid item xs={7}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,border:'2px solid red',height:7}} value={40} color="success"/>
+            {[1, 1, 1, 1].map((item, index) => (
+              <ReviewCard key={index} />
+            ))}
+          </Grid>
+          <Grid item xs={5}>
+            <h3 className="text-2xl font-bold mt-5">Product Ratings</h3>
+            <div className="flex items-center mb-4">
+              <Rating value={4.6} precision={0.5} readOnly />
+              <p className="opacity-60">57841 Raitings</p>
+            </div>
+            <div className="my-5 font-semibold">
+              <Grid container gap={3}>
+                <Grid item xs={2}>
+                  <p>Excellent</p>
+                </Grid>
+                <Grid item xs={7} sx={{ marginY: "auto" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    sx={{ borderRadius: 4, height: 7 }}
+                    value={40}
+                    color="success"
+                  />
+                </Grid>
+              </Grid>
+              <Grid container gap={3}>
+                <Grid item xs={2}>
+                  <p>Very Good</p>
+                </Grid>
+                <Grid item xs={7} sx={{ marginY: "auto" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    sx={{ borderRadius: 4, height: 7 }}
+                    value={53}
+                    color="success"
+                  />
+                </Grid>
+              </Grid>
+              <Grid container gap={3}>
+                <Grid item xs={2}>
+                  <p>Good</p>
+                </Grid>
+                <Grid item xs={7} sx={{ marginY: "auto" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    sx={{ borderRadius: 4, height: 7 }}
+                    value={51}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container gap={3}>
+                <Grid item xs={2}>
+                  <p>Average</p>
+                </Grid>
+                <Grid item xs={7} sx={{ marginY: "auto" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    sx={{ borderRadius: 4, height: 7 }}
+                    value={25}
+                    color="warning"
+                  />
+                </Grid>
+              </Grid>
+              <Grid container gap={3}>
+                <Grid item xs={2}>
+                  <p>Bad</p>
+                </Grid>
+                <Grid item xs={7} sx={{ marginY: "auto" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    sx={{ borderRadius: 4, height: 7 }}
+                    value={45}
+                    color="error"
+                  />
+                </Grid>
+              </Grid>
+            </div>
           </Grid>
         </Grid>
       </div>
+
+      {/* Similar Product */}
+      <h2 className="font-bold text-2xl mt-10 mx-auto w-10/12">
+        Similar Products
+      </h2>
+      <div className="flex flex-wrap w-10/12 mx-auto">
+      {PhoneData.map((item,index)=><ItemCard key={index}  item={item}/>)}
       </div>
-      
-      </div> */}
-      <Grid container sx={{margin:'auto', border:"2px solid red"}}>
-        <Grid item xs={7} sx={{border:'2px solid red', margin:'auto'}}>
-        <h2 className="font-bold text-2xl">Rating and Reviews</h2>
-        </Grid>
-        <Grid item xs={5}>
-        <Grid container gap={3}>
-          <Grid item xs={2}>
-            <p>Excellent</p>
-          </Grid>
-          <Grid item xs={7} sx={{marginY:"auto"}}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="success"/>
-          </Grid>
-        </Grid>
-        <Grid container gap={3}>
-          <Grid item xs={2}>
-            <p>Very Good</p>
-          </Grid>
-          <Grid item xs={7} sx={{marginY:"auto"}}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="success" />
-          </Grid>
-        </Grid>
-        <Grid container gap={3}>
-          <Grid item xs={2}>
-            <p>Good</p>
-          </Grid>
-          <Grid item xs={7} sx={{marginY:"auto"}}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40}/>
-          </Grid>
-        </Grid>
-        <Grid container gap={3}>
-          <Grid item xs={2}>
-            <p>Average</p>
-          </Grid>
-          <Grid item xs={7} sx={{marginY:"auto"}}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="warning"/>
-          </Grid>
-        </Grid>
-        <Grid container gap={3}>
-          <Grid item xs={2}>
-            <p>Bad</p>
-          </Grid>
-          <Grid item xs={7} sx={{marginY:"auto"}}>
-            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="error"/>
-          </Grid>
-        </Grid>
-        
-        </Grid>
-      </Grid>
     </div>
   );
 }

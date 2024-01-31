@@ -29,10 +29,10 @@ const Navbar = () => {
             <div className="account space-x-2 ">
               <AccountCircleIcon className="scale-125" />
               <select className="appearance-none outline-none px-2">
-                <option value="volvo">Login</option>
-                <option value="saab">My Profile</option>
-                <option value="mercedes">Orders</option>
-                <option value="audi">Logout</option>
+                <option value="Login">Login</option>
+                <option value="MyProfile">My Profile</option>
+                <option value="Orders">Orders</option>
+                <option value="Logout">Logout</option>
               </select>
             </div>
             <div className="space-x-2 ">
