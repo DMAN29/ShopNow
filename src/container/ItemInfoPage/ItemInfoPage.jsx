@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
+import ReviewCard from "./ReviewCard";
+import { Grid, LinearProgress, Rating } from "@mui/material";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -107,21 +109,28 @@ export default function Example() {
       <div className="pt-6 md:flex w-10/12 mx-auto">
         {/* Image gallery */}
         <div className="mx-auto sm:px-6 lg:px-8 md:1/2 xl:w-2/5 ">
-          <div className="flex">
-            <div className="w-1/4">
+          <div className="xl:flex">
+            <div className="hidden xl:block xl:w-1/4">
             {[1,1,1,1].map((item,index)=><img key={index}
                 src={product.images[0].src}
                 alt={product.images[0].alt}
                 className="h-1/4 w-full object-cover object-center p-2 rounded-xl"
               />)}
                </div>
-            <div className="w-3/4">
+            <div className="xl:w-3/4">
               <img
                 src={product.images[0].src}
                 alt={product.images[0].alt}
                 className="h-full w-full object-cover object-center"
               />
             </div>
+            <div className="xl:hidden grid grid-cols-4">
+            {[1,1,1,1].map((item,index)=><img key={index}
+                src={product.images[0].src}
+                alt={product.images[0].alt}
+                className="object-cover object-center p-2 rounded-xl"
+              />)}
+               </div>
           </div>
         </div>
         {/* Product info */}
@@ -327,6 +336,79 @@ export default function Example() {
           </div>
         </div>
       </div>
+      {/* Ratings and Reviews */}
+      {/* <div className="w-11/12 border mx-auto my-5 p-5">
+      <h2 className="font-bold text-2xl">Rating and Reviews</h2>
+      <div className="flex">
+      <div className="w-3/5">
+      {[1,1,1,1,1].map((item,index)=><ReviewCard key={index}/>)}
+      </div>
+      <div className="w-2/5">
+        <h3 className="text-xl font-semibold">Product Ratings</h3>
+        <div className="flex items-center">
+          <Rating value={4.6} precision={.5}  readOnly/>
+          <p className="opacity-60">57841 Raitings</p>
+        </div>
+        <Grid container   alignItem="center" gap={2} >
+          <Grid item xs={2}>
+            <p>Excellent</p>
+          </Grid>
+          <Grid item xs={7}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,border:'2px solid red',height:7}} value={40} color="success"/>
+          </Grid>
+        </Grid>
+      </div>
+      </div>
+      
+      </div> */}
+      <Grid container sx={{margin:'auto', border:"2px solid red"}}>
+        <Grid item xs={7} sx={{border:'2px solid red', margin:'auto'}}>
+        <h2 className="font-bold text-2xl">Rating and Reviews</h2>
+        </Grid>
+        <Grid item xs={5}>
+        <Grid container gap={3}>
+          <Grid item xs={2}>
+            <p>Excellent</p>
+          </Grid>
+          <Grid item xs={7} sx={{marginY:"auto"}}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="success"/>
+          </Grid>
+        </Grid>
+        <Grid container gap={3}>
+          <Grid item xs={2}>
+            <p>Very Good</p>
+          </Grid>
+          <Grid item xs={7} sx={{marginY:"auto"}}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="success" />
+          </Grid>
+        </Grid>
+        <Grid container gap={3}>
+          <Grid item xs={2}>
+            <p>Good</p>
+          </Grid>
+          <Grid item xs={7} sx={{marginY:"auto"}}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40}/>
+          </Grid>
+        </Grid>
+        <Grid container gap={3}>
+          <Grid item xs={2}>
+            <p>Average</p>
+          </Grid>
+          <Grid item xs={7} sx={{marginY:"auto"}}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="warning"/>
+          </Grid>
+        </Grid>
+        <Grid container gap={3}>
+          <Grid item xs={2}>
+            <p>Bad</p>
+          </Grid>
+          <Grid item xs={7} sx={{marginY:"auto"}}>
+            <LinearProgress variant="determinate" sx={{borderRadius:4,height:7}} value={40} color="error"/>
+          </Grid>
+        </Grid>
+        
+        </Grid>
+      </Grid>
     </div>
   );
 }
