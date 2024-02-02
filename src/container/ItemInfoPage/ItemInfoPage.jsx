@@ -350,21 +350,21 @@ export default function Example() {
       </div>
 
       {/* Ratings and Reviews */}
-      <h2 className="font-bold text-2xl mt-5 mx-auto w-10/12">
+      <h2 className="font-bold text-lg md:text-2xl mt-5 mx-auto w-10/12">
         Rating and Reviews
       </h2>
       <div className="w-10/12 mx-auto my-5 border shadow-xl">
         <Grid container>
-          <Grid item xs={7}>
+          <Grid item xs={12} md={7}>
             {[1, 1, 1, 1].map((item, index) => (
               <ReviewCard key={index} />
             ))}
           </Grid>
-          <Grid item xs={5}>
-            <h3 className="text-2xl font-bold mt-5">Product Ratings</h3>
+          <Grid item xs={12} md={5} sx={{marginX:2}}>
+            <h3 className="text-lg md:text-2xl font-bold mt-5">Product Ratings</h3>
             <div className="flex items-center mb-4">
-              <Rating value={4.6} precision={0.5} readOnly />
-              <p className="opacity-60">57841 Raitings</p>
+              <Rating value={4.6} precision={0.5} readOnly sx={{fontSize:{xs:20,md:28}}} />
+              <p className="opacity-60 text-sm md:text-base">57841 Raitings</p>
             </div>
             <div className="my-5 font-semibold">
               <Grid container gap={3}>
@@ -437,10 +437,10 @@ export default function Example() {
       </div>
 
       {/* Similar Product */}
-      <h2 className="font-bold text-2xl mt-10 mx-auto w-10/12">
+      <h2 className="font-bold text-2xl mt-10 mx-auto w-10/12 ">
         Similar Products
       </h2>
-      <div className="flex flex-wrap w-10/12 mx-auto">
+      <div className="flex flex-wrap w-10/12 mx-auto ">
       {PhoneData.map((item,index)=><ItemCard key={index}  item={item}/>)}
       </div>
     </div>
