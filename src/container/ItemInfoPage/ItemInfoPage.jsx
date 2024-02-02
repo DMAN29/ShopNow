@@ -64,7 +64,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function ItemIndoPage() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
@@ -108,41 +108,32 @@ export default function Example() {
           </li>
         </ol>
       </nav>
-      <div className="pt-6 md:flex w-10/12 mx-auto">
+      <div className="pt-6 md:flex w-10/12 mx-auto ">
         {/* Image gallery */}
-        <div className="mx-auto sm:px-6 lg:px-8 md:1/2 xl:w-2/5 ">
-          <div className="xl:flex">
-            <div className="hidden xl:block xl:w-1/4">
-              {[1, 1, 1, 1].map((item, index) => (
-                <img
-                  key={index}
-                  src={product.images[0].src}
-                  alt={product.images[0].alt}
-                  className="h-1/4 w-full object-cover object-center p-2 rounded-xl"
-                />
-              ))}
-            </div>
-            <div className="xl:w-3/4">
+        <div className="mx-auto sm:px-6 lg:px-8 md:w-1/2 xl:w-2/5">
+            <div className=" sticky top-36">
+            <div>
               <img
                 src={product.images[0].src}
                 alt={product.images[0].alt}
-                className="h-full w-full object-cover object-center"
+                className="h-80 md:h-[24rem] lg:h-[29rem] xl:h-[36rem] w-full object-cover object-center"
               />
             </div>
-            <div className="xl:hidden grid grid-cols-4">
-              {[1, 1, 1, 1].map((item, index) => (
+            <div className="grid grid-cols-4">
+              {[1,1,1,1].map((item, index) => (
                 <img
                   key={index}
-                  src={product.images[0].src}
-                  alt={product.images[0].alt}
-                  className="object-cover object-center p-2 rounded-xl"
+                  src={product.images[index].src}
+                  alt={product.images[index].alt}
+                  className="object-cover object-center p-2 rounded-xl h-24 xl:h-36 w-36"
                 />
               ))}
             </div>
+            </div>
           </div>
-        </div>
+        
         {/* Product info */}
-        <div className="mx-auto  px-4 pb-16 pt-2 sm:px-6 lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-5 md:1/2 xl:w-3/5">
+        <div className="mx-auto  px-4 pb-16 pt-2 sm:px-6 lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-5 md:w-1/2 xl:w-3/5 ">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="md:text-xl text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl xl:text-3xl ">
               {product.name}
@@ -360,13 +351,13 @@ export default function Example() {
               <ReviewCard key={index} />
             ))}
           </Grid>
-          <Grid item xs={12} md={5} sx={{marginX:2}}>
+          <Grid item xs={12} md={5} sx={{marginX:{xs:2,md:0}}}>
             <h3 className="text-lg md:text-2xl font-bold mt-5">Product Ratings</h3>
             <div className="flex items-center mb-4">
               <Rating value={4.6} precision={0.5} readOnly sx={{fontSize:{xs:20,md:28}}} />
               <p className="opacity-60 text-sm md:text-base">57841 Raitings</p>
             </div>
-            <div className="my-5 font-semibold">
+            <div className="font-semibold m-5">
               <Grid container gap={3}>
                 <Grid item xs={2}>
                   <p>Excellent</p>
@@ -440,7 +431,7 @@ export default function Example() {
       <h2 className="font-bold text-2xl mt-10 mx-auto w-10/12 ">
         Similar Products
       </h2>
-      <div className="flex flex-wrap w-10/12 mx-auto ">
+      <div className="flex flex-wrap w-10/12 mx-auto mb-10 ">
       {PhoneData.map((item,index)=><ItemCard key={index}  item={item}/>)}
       </div>
     </div>
