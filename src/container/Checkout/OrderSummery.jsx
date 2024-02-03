@@ -1,16 +1,16 @@
-import React from 'react'
-import AddressCard from './AddressCard'
-import Cart from '../Cart/Cart'
+import React from "react";
+import AddressCard from "./AddressCard";
+import Cart from "../Cart/Cart";
 
 const OrderSummery = () => {
-  return <div className='mt-5'>
-  
-    <div className=' w-10/12 mx-auto'>
-
-  <AddressCard/>
+  return (
+    <div className="mt-5">
+      <div className=" w-10/12 mx-auto">
+        <AddressCard btnText="Change Address"/>
+      </div>
+      <Cart />
     </div>
-  <Cart/>
-  </div>
-}
+  );
+};
 
-export default OrderSummery
+export default OrderSummery;

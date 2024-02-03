@@ -7,6 +7,7 @@ import { PhoneData } from './Data/PhoneData';
 import ItemInfoPage from './container/ItemInfoPage/ItemInfoPage';
 import Cart from './container/Cart/Cart';
 import Checkout from './container/Checkout/Checkout';
+import Orders from './container/Orders/Orders';
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
         {/* <ItemsPage product={PhoneData} /> */}
     {/* <ItemInfoPage/> */}
     {/* <Cart/> */}
-    <Checkout/>
+    {/* <Checkout/> */}
+    <Orders/>
       </div>
       <Footer />
     </div>
