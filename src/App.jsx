@@ -6,6 +6,7 @@ import ItemsPage from './container/ItemsPage/ItemsPage';
 import { PhoneData } from './Data/PhoneData';
 import ItemInfoPage from './container/ItemInfoPage/ItemInfoPage';
 import Cart from './container/Cart/Cart';
+import Checkout from './container/Checkout/Checkout';
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         {/* <HomePage /> */}
         {/* <ItemsPage product={PhoneData} /> */}
     {/* <ItemInfoPage/> */}
-    <Cart/>
+    {/* <Cart/> */}
+    <Checkout/>
       </div>
       <Footer />
     </div>

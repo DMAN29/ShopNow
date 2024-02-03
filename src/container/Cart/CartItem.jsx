@@ -29,9 +29,9 @@ const CartItem = () => {
       </div>
       <div className="flex mb-2 ">
         <p className="flex mt-2 items-center w-24 md:w-28 xl:w-48 ml-2">
-          <RemoveCircleOutlineIcon sx={{fontSize:{xs:16,md:20}}}/>
+          <RemoveCircleOutlineIcon sx={{fontSize:{xs:16,md:20,xl:24}}}/>
           <span className="w-full mx-1 md:mx-3 border text-center text-xs md:text-sm lg:text-base">1</span>
-          <ControlPointIcon sx={{fontSize:{xs:16,md:20}}}/>
+          <ControlPointIcon sx={{fontSize:{xs:16,md:20,xl:24}}}/>
         </p>
         <Button sx={{ fontSize: { xs: 12, md:18 } ,paddingX:{xs:2,md:5}}} color="secondary">
           Remove
