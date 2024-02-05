@@ -1,9 +1,12 @@
 
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import ItemCard from './ItemCard'
+import { ProductType } from '../../Data/ProductType'
+import { useNavigate } from 'react-router-dom'
+import { PhoneData } from '../../Data/PhoneData'
 
 const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
@@ -29,9 +32,33 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ItemsPage({product}) {
+export default function ItemsPage() {
+  // const [data,setData] = useState();
+  // const navigate = useNavigate();
+  // console.log(navigate);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-
+  // console.log(product)
+  // useEffect(() => {
+  //   // Use dynamic import to load data asynchronously
+  //   import(`../Data/${product.dataFile}.js`)
+  //     .then((module) => {
+  //       setData(module.default);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error loading data:', error);
+  //     });
+  // }, [product.dataFile]);
+  // useEffect(()=>{
+  //   // ProductType.fi((item)=>)
+  //   import(`../Data/${product}Data.js`)
+  //   .then((module)=>{
+  //     setData(module.default);
+  //   })
+  //   .catch((e)=>{
+  //     console.error("Error Loding :" ,e);
+  //   });
+  // },[]);
+  
   return (
     <div className="bg-white">
       <div>
@@ -246,7 +273,10 @@ export default function ItemsPage({product}) {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{product.map((data,index)=><ItemCard key={index} item={data}/>)}
+              <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {PhoneData.map((item, index) => (
+                  <ItemCard key={index} item={item} />
+                ))}
               </div>
             </div>
           </section>

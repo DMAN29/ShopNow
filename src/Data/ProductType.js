@@ -1,38 +1,47 @@
 export const ProductType = [
     {
-        product:"Mobiles",
+        category:"Phone",
+        dataFile:"PhoneData",
         src:"./images/item1.jfif"
     },
     {
-        product:"Laptops",
+        category:"Laptop",
+        dataFile:"LaptopData",
         src:"./images/item2.jfif"
     },
     {
-        product:"Headphones",
+        category:"Headphone",
+        dataFile:"HeadphoneData",
         src:"./images/item3.jfif"
     },
     {
-        product:"Earphones",
+        category:"Earphone",
+        dataFile:"EarphoneData",
         src:"./images/item4.jfif"
     },
     {
-        product:"Neckbands",
+        category:"Neckband",
+        dataFile:"NeckbandData",
         src:"./images/item5.jfif"
     },
     {
-        product:"Keyboards",
+        category:"Keyboard",
+        dataFile:"KeyboardData",
         src:"./images/item6.jfif"
     },
     {
-        product:"Mouses",
+        category:"Mouse",
+        dataFile:"MouseData",
         src:"./images/item7.jfif"
     },
     {
-        product:"Cameras",
+        category:"Camera",
+        dataFile:"CameraData",
         src:"./images/item8.jfif"
     },
     {
-        product:"Monitors",
+        category:"Monitor",
+        dataFile:"MonitorData",
         src:"./images/item9.jfif"
     }
 ]

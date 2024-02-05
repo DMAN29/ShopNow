@@ -8,22 +8,14 @@ import ItemInfoPage from './container/ItemInfoPage/ItemInfoPage';
 import Cart from './container/Cart/Cart';
 import Checkout from './container/Checkout/Checkout';
 import Orders from './container/Orders/Orders';
+import { Route, Routes } from 'react-router-dom';
+import CustomerRouter from './Routers/CustomerRouter';
 
 const App = () => {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div className="flex-1 py-[72px] md:pt-[128px] lg:pb-0">
-        {/* <HomePage /> */}
-        {/* <ItemsPage product={PhoneData} /> */}
-    {/* <ItemInfoPage/> */}
-    {/* <Cart/> */}
-    {/* <Checkout/> */}
-    <Orders/>
-      </div>
-      <Footer />
-    </div>
-
+  return (<Routes>
+    <Route path='/*' Component={CustomerRouter}/>
+    {/* Admin router */}
+  </Routes>
   );
 };
 
